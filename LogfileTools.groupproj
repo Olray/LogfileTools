@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{82638C43-8E76-4465-A73E-5F788015A50C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="src\ConcatLog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\SplitLog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\AnonLog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\FilterLog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\ExtractLog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\SortLog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\ReverseRename.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ConcatLog">
+        <MSBuild Projects="src\ConcatLog.dproj"/>
+    </Target>
+    <Target Name="ConcatLog:Clean">
+        <MSBuild Projects="src\ConcatLog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ConcatLog:Make">
+        <MSBuild Projects="src\ConcatLog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SplitLog">
+        <MSBuild Projects="src\SplitLog.dproj"/>
+    </Target>
+    <Target Name="SplitLog:Clean">
+        <MSBuild Projects="src\SplitLog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SplitLog:Make">
+        <MSBuild Projects="src\SplitLog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AnonLog">
+        <MSBuild Projects="src\AnonLog.dproj"/>
+    </Target>
+    <Target Name="AnonLog:Clean">
+        <MSBuild Projects="src\AnonLog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AnonLog:Make">
+        <MSBuild Projects="src\AnonLog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FilterLog">
+        <MSBuild Projects="src\FilterLog.dproj"/>
+    </Target>
+    <Target Name="FilterLog:Clean">
+        <MSBuild Projects="src\FilterLog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FilterLog:Make">
+        <MSBuild Projects="src\FilterLog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExtractLog">
+        <MSBuild Projects="src\ExtractLog.dproj"/>
+    </Target>
+    <Target Name="ExtractLog:Clean">
+        <MSBuild Projects="src\ExtractLog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExtractLog:Make">
+        <MSBuild Projects="src\ExtractLog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SortLog">
+        <MSBuild Projects="src\SortLog.dproj"/>
+    </Target>
+    <Target Name="SortLog:Clean">
+        <MSBuild Projects="src\SortLog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SortLog:Make">
+        <MSBuild Projects="src\SortLog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReverseRename">
+        <MSBuild Projects="src\ReverseRename.dproj"/>
+    </Target>
+    <Target Name="ReverseRename:Clean">
+        <MSBuild Projects="src\ReverseRename.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReverseRename:Make">
+        <MSBuild Projects="src\ReverseRename.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ConcatLog;SplitLog;AnonLog;FilterLog;ExtractLog;SortLog;ReverseRename"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ConcatLog:Clean;SplitLog:Clean;AnonLog:Clean;FilterLog:Clean;ExtractLog:Clean;SortLog:Clean;ReverseRename:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ConcatLog:Make;SplitLog:Make;AnonLog:Make;FilterLog:Make;ExtractLog:Make;SortLog:Make;ReverseRename:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
