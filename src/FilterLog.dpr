@@ -8,6 +8,7 @@ uses
   DeCAL,
   LogToolsUnit in 'LogToolsUnit.pas',
   FilterLog.CommandLine in 'FilterLog.CommandLine.pas',
+    // install into externals from https://github.com/Olray/GpDelphiUnits
   GpCommandLineParser in '..\externals\GpDelphiUnits\src\GpCommandLineParser.pas';
 
 function EnumLogfiles(const FileNameMask: string): DList;

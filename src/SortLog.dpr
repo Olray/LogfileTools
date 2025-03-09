@@ -9,6 +9,7 @@ uses
   System.Classes,
   System.SysUtils,
   System.DateUtils,
+    // install into externals from https://github.com/Olray/DeCAL
   DeCAL,
   LogToolsUnit in 'LogToolsUnit.pas';
 
@@ -24,9 +25,9 @@ type TFileEntry = class
   Arguments: ALine : String; Entry : DArray
   Result:    Boolean
 
-  Purpose:   Ermittelt ob sich ein String bereits in einem DArray befindet.
-             Haben die Strings eine unterschiedliche Länge, wird nur der
-             kürzere der beiden Teile verglichen.
+  Purpose:   Determines whether a string is already in a DArray. If the strings
+             have a different length, only the shorter of the two parts is
+             compared.
 -----------------------------------------------------------------------------}
 Function LinePresent(ALine : String; Entry : DArray) : Boolean;
 
@@ -56,7 +57,7 @@ begin
   begin
     ELine := getString(iter);
     lenS := Length(ELine);
-    if lenS <> lenD then // Wenn ungleiche Länge, dann nur den kleineren Teil vergleichen
+    if lenS <> lenD then // If unequal length, only compare the smaller part
     begin
       len := Min(lenS, LenD);
       if Copy(ELine,1,len) = Copy(ALine,1,len) then
@@ -65,7 +66,7 @@ begin
         done := True;
       end;
     end
-    else // Wenn gleiche Länge kein Copy() verwenden -> schneller
+    else // If same length, do not use Copy() -> faster
     begin
       if ELine = ALine then
       begin
@@ -99,14 +100,7 @@ End;
   Purpose:   Prints a status report of the current progress
 -----------------------------------------------------------------------------}
 procedure ReportF(Filename : String; lines : Cardinal; mindate, maxdate : TDateTime);
-var curYear,
-    curMonth,
-    curDay,
-    curHour,
-    curMinute,
-    curSecond,
-    Dummy      : WORD;
-    s1,
+var s1,
     s2         : string;
 begin
   if (mindate > 0.01) then
@@ -190,7 +184,7 @@ Begin
     repeat
       if (SR.Name <> '.') and (SR.Name <> '..') then
       begin
-        // Das erste ./ entfernen um relative Namen zu erhalten
+          // Remove the first ./ to get relative names
         ThisFName := IncludeTrailingPathDelimiter(ADir)+SR.Name;
         ThisFName := Copy (ThisFName,3,Length(ThisFName)-2);
 
@@ -309,7 +303,7 @@ Begin
               if not LinePresent(BufS, Zeilen) then
                 Zeilen.add([BufS]);
             end;
-          end; // If im Monat
+          end; // If in the month
 
           if (actZeile mod 1000 = 0) Then
             Write(Format('%2.2d.%4.4d  %-20s      '#13, [curMonth, curYear, CurFile.FileName+':'+IntToStr(actZeile DIV 1000)]));
@@ -317,7 +311,7 @@ Begin
         end; // processing single line
 
         CloseFileStream(Source);
-      end; // If Datei relevant
+      end; // If File is relevant
     end; // iterating source files
 
     if DDaten.size > 0 then

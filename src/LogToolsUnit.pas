@@ -49,7 +49,7 @@ uses
   Arguments: AString : string
   Result:    None
 
-  Purpose:   Druckt Strings im OEM-Format auf der Konsole
+  Purpose:   Prints strings in OEM code page to console
 -----------------------------------------------------------------------------}
 procedure OEMPrint (AString : string);
 
@@ -96,9 +96,9 @@ end;
   Arguments: WelcomeMessage : string
   Result:    None
 
-  Purpose:   Druckt einen string auf der Konsole mit Zeilenumbruch bei 78
-             Zeichen und der Ersetzung von $FN mit dem aktuellen Dateinamen
-             (auch wenn die Datei umbenannt wurde)
+  Purpose:   Prints a string on the console with a line break at 78 characters
+             and the replacement of $FN with the current file name (even if the
+             file has been renamed)
 -----------------------------------------------------------------------------}
 procedure PrintWelcome(WelcomeMessage : string);
 begin
@@ -113,7 +113,7 @@ end;
   Arguments: OriginalLine : string
   Result:    string
 
-  Purpose:   Extrahiert den Hostnamen aus einer Zeile der Logdatei
+  Purpose:   Extracts the host name from a line of the log file
 -----------------------------------------------------------------------------}
 function GetHostnamePart(OriginalLine : string) : string;
 var i : Integer;
@@ -130,7 +130,7 @@ end;
   Arguments: OriginalLine : string
   Result:    string
 
-  Purpose:   Extrahiert den Datumspart aus einer Zeile in der Logdatei
+  Purpose:   Extracts the date part from a line in the log file
 -----------------------------------------------------------------------------}
 function GetDatePart(OriginalLine : string) : string;
 VAR i, j : Integer;
@@ -238,7 +238,7 @@ begin
     repeat
       if (SR.Name <> '.') and (SR.Name <> '..') then
       begin
-        // Das erste ./ entfernen um relative Namen zu erhalten
+        // Remove the first ./ to get relative names
         ThisFName := IncludeTrailingPathDelimiter(ADir)+SR.Name;
         ThisFName := Copy (ThisFName,3,Length(ThisFName)-2);
 

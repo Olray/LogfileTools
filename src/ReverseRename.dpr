@@ -6,8 +6,10 @@ program ReverseRename;
 
 uses
   System.SysUtils,
+  Winapi.Windows,
   DeCAL,
   LogToolsUnit in 'LogToolsUnit.pas',
+    // install into externals from https://github.com/Olray/GpDelphiUnits
   GpCommandLineParser in '..\externals\GpDelphiUnits\src\GpCommandLineParser.pas',
   ReverseRename.CommandLine in 'ReverseRename.CommandLine.pas';
 
@@ -54,11 +56,11 @@ begin
   WriteLn;
   WriteLn;
 
-  // Logfiles suchen und Dateiliste erstellen + sortieren
+    // Search log files and create + sort file list
   AList := GetFileList(cl.SourceFileName);
   DSorted := DMap.Create;
 
-  // Quelldateien iterieren
+    // Iterate source files
   di := AList.start;
   while iterateOver(di) do
   begin

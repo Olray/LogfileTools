@@ -5,6 +5,8 @@ and much more.
 
 The Logfile Tools are **64-bit command line programs** that can be executed under Windows XP(x64) to Windows 11.
 
+Compiles on Delphi 12.1 (29.0.52631.8427) Community Edition
+
 To use the log file tools, simply copy them to your log files or to the system path or use the provided installer.
 
 Download the installer here: https://go.husx.de/9

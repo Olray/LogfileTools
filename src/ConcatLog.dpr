@@ -8,8 +8,9 @@ uses
   System.SysUtils,
     // install into externals from https://github.com/Olray/DeCAL
   DeCAL,
-  LogToolsUnit in 'LogToolsUnit.pas',
+    // install into externals from https://github.com/Olray/GpDelphiUnits
   GpCommandLineParser in '..\externals\GpDelphiUnits\src\GpCommandLineParser.pas',
+  LogToolsUnit in 'LogToolsUnit.pas',
   ConcatLog.CommandLine in 'ConcatLog.CommandLine.pas';
 
 function GetStreamReaderForFile(const FileName: string): TStreamReader;

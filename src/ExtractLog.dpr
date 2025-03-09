@@ -7,6 +7,7 @@ uses
   System.Classes,
   LogToolsUnit in 'LogToolsUnit.pas',
   ExtractLog.CommandLine in 'ExtractLog.CommandLine.pas',
+    // install into externals from https://github.com/Olray/GpDelphiUnits
   GpCommandLineParser in '..\externals\GpDelphiUnits\src\GpCommandLineParser.pas';
 
 function ParseDate (ADate : string) : TDateTime;
@@ -44,7 +45,7 @@ end;
 procedure Main;
 VAR Date1       : TDateTime;
 VAR Date2       : TDateTime;
-// Date calculations
+  // Date calculations
 VAR OneMin      : TDateTime;
 VAR ts          : Cardinal;
 VAR Source      : TStreamReader;

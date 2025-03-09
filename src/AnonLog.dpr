@@ -10,6 +10,7 @@ uses
   DeCAL,
   LogToolsUnit in 'C:\Delphi\LogTools\LogToolsUnit.pas',
   AnonLog.CommandLine in 'AnonLog.CommandLine.pas',
+    // install into externals from https://github.com/Olray/GpDelphiUnits
   GpCommandLineParser in '..\externals\GpDelphiUnits\src\GpCommandLineParser.pas';
 
 function AnonymizeLine(ALine : string) : string;
